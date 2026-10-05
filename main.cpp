@@ -1,0 +1,25 @@
+//задание 3
+//2,5·(8x - 4y) - 4·(5x - 3,5z)= (20x - 10y) - (20x - 14z) = 20x - 10y - 20x + 14z = 14z - 10y
+//Итоговая формула: 14*z - 10*y
+#include <iostream>
+using namespace std;
+
+int main() {
+    double x, y, z, result;
+
+    cout << "Введите x: ";
+    cin >> x;
+
+    cout << "Введите y: ";
+    cin >> y;
+
+    cout << "Введите z: ";
+    cin >> z;
+
+    // после упрощения выражения x сократился
+    result = 14 * z - 10 * y;
+
+    cout << "Результат: " << result << endl;
+
+    return 0;
+}
