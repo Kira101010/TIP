@@ -1,5 +1,5 @@
-// Р—Р°РґР°С‡Р° 1. РџСЂРѕРµРєС‚РЅС‹Р№
-// Р—Р°РґР°С‡Р° 2. РџСЂРѕРµРєС‚РЅС‹Р№
+// Задача 1. Проектный
+// Задача 2. Проектный
 
 #include <iostream>
 #include <cmath>
@@ -9,21 +9,21 @@ using namespace std;
 struct Task1 {
     double a, b;
     void input() {
-        cout << "Р—Р°РґР°С‡Р° 1. Р’РІРµРґРёС‚Рµ РєР°С‚РµС‚С‹ a Рё b: ";
+        cout << "Задача 1. Введите катеты a и b: ";
         cin >> a >> b;
     }
     double solve() {
         return sqrt(a * a + b * b);
     }
     void output() {
-        cout << "Р“РёРїРѕС‚РµРЅСѓР·Р°: " << solve() << endl;
+        cout << "Гипотенуза: " << solve() << endl;
     }
 };
 
 struct Task2 {
     double v, t;
     void input() {
-        cout << "Р—Р°РґР°С‡Р° 2. Р’РІРµРґРёС‚Рµ СЃРєРѕСЂРѕСЃС‚СЊ v Рё РІСЂРµРјСЏ t: ";
+        cout << "Задача 2. Введите скорость v и время t: ";
         cin >> v >> t;
     }
     double solve() {
@@ -33,7 +33,7 @@ struct Task2 {
         return pos;
     }
     void output() {
-        cout << "РћС‚РјРµС‚РєР°: " << solve() << endl;
+        cout << "Отметка: " << solve() << endl;
     }
 };
 
