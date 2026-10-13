@@ -1,0 +1,84 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double a, b, c;
+    char command;
+
+    // считываем коэффициенты
+    cout << "Введите a, b, c: ";
+    cin >> a >> b >> c;
+
+    // считываем символ команды
+    cout << "Введите команду: ";
+    cin >> command;
+
+    // --- Команда P: вывод ФИО ---
+    if (command == 'P') {
+        cout << "Ivan Ivanov" << endl;
+    }
+
+    // --- Команда e: поиск корней ---
+    else if (command == 'e') {
+        // случай 1: a = 0, b = 0, c = 0 -> корень любой x
+        if (a == 0 && b == 0 && c == 0) {
+            cout << "x - lyuboe deystvitelnoe chislo" << endl;
+        }
+        // случай 2: a = 0, b = 0, c != 0 -> решений нет
+        else if (a == 0 && b == 0) {
+            cout << "Korney net" << endl;
+        }
+        // случай 3: a = 0, b != 0 -> линейное уравнение bx + c = 0
+        else if (a == 0) {
+            double x = -c / b;
+            cout << "x = " << x << endl;
+        }
+        // случай 4: a != 0 -> квадратное уравнение, считаем дискриминант
+        else {
+            double D = b * b - 4 * a * c;
+            if (D > 0) {
+                double x1 = (-b + sqrt(D)) / (2 * a);
+                double x2 = (-b - sqrt(D)) / (2 * a);
+                cout << "x1 = " << x1 << endl;
+                cout << "x2 = " << x2 << endl;
+            }
+            else if (D == 0) {
+                double x = -b / (2 * a);
+                cout << "x = " << x << endl;
+            }
+            else {
+                cout << "Korney net" << endl;
+            }
+        }
+    }
+
+    // --- Команда k: проверка на палиндром ---
+    else if (command == 'k') {
+        int number;
+        cout << "Введите 6-значное число: ";
+        cin >> number;
+
+        // разбиваем число на цифры
+        int d1 = number / 100000 % 10;
+        int d2 = number / 10000 % 10;
+        int d3 = number / 1000 % 10;
+        int d4 = number / 100 % 10;
+        int d5 = number / 10 % 10;
+        int d6 = number % 10;
+
+        // палиндром: 1-я цифра = 6-й, 2-я = 5-й, 3-я = 4-й
+        if (d1 == d6 && d2 == d5 && d3 == d4) {
+            cout << "Palindrom" << endl;
+        }
+        else {
+            cout << "Ne palindrom" << endl;
+        }
+    }
+
+    // --- Неизвестная команда ---
+    else {
+        cout << "Neizvestnaya komanda" << endl;
+    }
+
+    return 0;
+}
